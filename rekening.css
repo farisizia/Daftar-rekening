@@ -1,0 +1,145 @@
+ /* Reset Dasar */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            text-align: center;
+        }
+
+        /* Header Profil */
+        .profile-section {
+            margin-bottom: 35px;
+            color: white;
+        }
+
+        .avatar {
+            width: 90px;
+            height: 90px;
+            background-color: #eee;
+            border-radius: 50%;
+            border: 3px solid rgba(255, 255, 255, 0.5);
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+
+        .profile-name { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+        .profile-bio { font-size: 14px; opacity: 0.9; }
+
+        /* Gaya Tombol Linktree */
+        .link-button {
+            display: flex;
+            align-items: center;
+            /* PENTING: Ubah arah flex jadi row agar logo di kiri, teks di kanan */
+            flex-direction: row; 
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 15px 20px; /* Padding sedikit disesuaikan */
+            margin-bottom: 16px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: #333;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+            text-align: left; /* Teks rata kiri */
+        }
+
+        .link-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .link-button:active {
+            transform: scale(0.98);
+            background-color: #f0f0f0;
+        }
+
+        /* --- CSS BARU UNTUK LOGO --- */
+        .bank-logo-img {
+            width: 45px;  /* Lebar area logo */
+            height: 45px; /* Tinggi area logo */
+            object-fit: contain; /* Agar logo tidak gepeng */
+            margin-right: 15px; /* Jarak antara logo dan teks */
+            /* Optional: Tambah background putih lingkaran kecil di belakang logo */
+            /* background: #f9f9f9; border-radius: 50%; padding: 5px; */
+        }
+
+        /* Container untuk Detail Teks (Nama Bank & No Rek) */
+        .details-container {
+            flex-grow: 1; /* Mengisi sisa ruang kosong */
+        }
+
+        .bank-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+        }
+
+        .rek-number {
+            font-size: 18px; /* Ukuran font sedikit diperkecil agar muat */
+            font-weight: 700;
+            font-family: monospace;
+            color: #000;
+            letter-spacing: -0.5px;
+        }
+
+        .rek-name {
+             font-size: 12px;
+             color: #888;
+             margin-top: 2px;
+        }
+
+        .copy-indicator {
+            font-size: 20px;
+            color: #ccc;
+            opacity: 0.5;
+            margin-left: 10px; /* Beri jarak dari teks */
+        }
+        
+        /* Notifikasi Toast */
+        #toast {
+            visibility: hidden;
+            min-width: 250px;
+            margin-left: -125px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 30px;
+            padding: 12px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        #toast.show {
+            visibility: visible;
+            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @-webkit-keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
+        @keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
+        @-webkit-keyframes fadeout { from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;} }
+        @keyframes fadeout { from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;} }
